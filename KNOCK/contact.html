@@ -95,7 +95,7 @@
 
 </form>
 
-<!-- MENSAJE OCULTO -->
+<!-- MENSAJE NORMAL -->
 <div id="successMessage" class="hiddenMessage">
 
 Your message has been sent. You will receive an Email with a response from the K.N.O.C.K. staff. If you're lucky, you might even receive a message from the band members themselves! 
@@ -103,8 +103,10 @@ Your message has been sent. You will receive an Email with a response from the K
 <br><br>
 
 ¡Thank you for your message!!!
-
 </div>
+
+<!-- MENSAJE SECRETO -->
+<div id="secretMessage" class="hiddenMessage"></div>
     
     <div class="box">
 
@@ -138,9 +140,62 @@ Your message has been sent. You will receive an Email with a response from the K
 
 document.getElementById("contactForm").addEventListener("submit", function(e){
 
-    e.preventDefault(); // evita recargar la página
+    e.preventDefault();
 
-    document.getElementById("successMessage").classList.add("showMessage");
+    let msg = document.getElementById("message").value.toLowerCase();
+
+    let secretBox = document.getElementById("secretMessage");
+    let normalBox = document.getElementById("successMessage");
+
+    // limpiar todo
+    secretBox.style.display = "none";
+    normalBox.style.display = "none";
+
+    document.body.classList.remove("yuki-mode", "kanoko-mode");
+
+    // 💀 YUKI ROUTE
+    if(msg.includes("yuki")){
+
+        document.body.classList.add("yuki-mode");
+
+        secretBox.innerHTML = `
+            <b>ACCESS GRANTED //</b><br><br>
+
+            <a href="yuki.html" style="color:#ff0000; font-weight:bold; text-decoration:underline;">
+                ENTER ARCHIVE
+            </a><br><br>
+
+            Wut?
+        `;
+
+        secretBox.style.display = "block";
+        this.reset();
+        return;
+    }
+
+    // 🍂 KANOKO ROUTE
+    if(msg.includes("kanoko")){
+
+        document.body.classList.add("kanoko-mode");
+
+        secretBox.innerHTML = `
+            <b>ARCHIVE FOUND //</b><br><br>
+
+            <a href="kanoko.html" style="color:#ffcc88; font-weight:bold; text-decoration:underline;">
+                OPEN ARCHIVE
+            </a><br><br>
+
+            why?
+        `;
+
+        secretBox.style.display = "block";
+        this.reset();
+        return;
+    }
+
+    // 📨 NORMAL MESSAGE
+    normalBox.style.display = "block";
+    normalBox.classList.add("showMessage");
 
     this.reset();
 
