@@ -180,3 +180,130 @@ td{
     color:#aaa;
 
 }
+
+.news-item{
+
+    border:1px solid #444;
+
+    margin-bottom:15px;
+
+    padding:10px;
+
+    background:#1a1a1a;
+
+}
+
+.news-item h3{
+
+    color:#ff4040;
+
+    margin:0 0 5px 0;
+
+    font-size:14px;
+
+}
+
+.news-item p{
+
+    margin:0;
+
+    font-size:13px;
+
+    color:#ddd;
+
+}
+
+.box h3{
+
+    color:#ffcc00;
+
+    margin-top:15px;
+
+    border-left:4px solid #990000;
+
+    padding-left:8px;
+
+}
+
+.box ul{
+
+    list-style-type:square;
+
+    margin-left:20px;
+
+    color:#ddd;
+
+}
+
+.box ul li{
+
+    padding:3px 0;
+
+    font-size:13px;
+
+}
+
+/* separador visual entre álbumes */
+.box{
+
+    position:relative;
+
+}
+
+/* efecto “discografía profesional” */
+.box::after{
+
+    content:"";
+
+    display:block;
+
+    height:1px;
+
+    background:linear-gradient(to right, transparent, #555, transparent);
+
+    margin-top:15px;
+
+}
+
+/* títulos de años */
+.box h2{
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+/* álbum importante (último álbum) */
+.box:last-of-type{
+
+    border:2px solid #990000;
+
+    background:#151515;
+
+}
+
+/* resaltado del álbum final */
+.box:last-of-type h3{
+
+    color:#ff4040;
+
+}
+
+/* efecto hover estilo catálogo */
+.box:hover{
+
+    border-color:#777;
+
+    background:#232323;
+
+}
+
+/* pequeños detalles “discográfica” */
+.hero p{
+
+    font-style:italic;
+
+    color:#bbb;
+
+}
