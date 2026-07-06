@@ -20,10 +20,10 @@
     <div class="menu">
 
         <a href="index.html">HOME</a>
-        <a href="#">NEWS</a>
-        <a href="#">MUSIC</a>
-        <a href="#">GALLERY</a>
-        <a href="#">CONTACT</a>
+        <a href="news.html">NEWS</a>
+        <a href="music.html">MUSIC</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="contact.html">CONTACT</a>
 
     </div>
 
@@ -78,33 +78,34 @@
 
 <td class="right">
 
-    <div class="box">
+<form id="contactForm">
 
-        <h2>FAN MAIL</h2>
+    <p>Name:</p>
+    <input type="text" id="name">
 
-        <p>
-        Send a message to the band:
-        </p>
+    <p>Email:</p>
+    <input type="text" id="email">
 
-        <form>
+    <p>Message:</p>
+    <textarea id="message"></textarea>
 
-            <p>Name:</p>
-            <input type="text">
+    <br><br>
 
-            <p>Email:</p>
-            <input type="text">
+    <button type="submit">SEND</button>
 
-            <p>Message:</p>
-            <textarea></textarea>
+</form>
 
-            <br><br>
+<!-- MENSAJE OCULTO -->
+<div id="successMessage" class="hiddenMessage">
 
-            <button type="button">SEND</button>
+Your message has been sent. You will receive an Email with a response from the K.N.O.C.K. staff. If you're lucky, you might even receive a message from the band members themselves! 
 
-        </form>
+<br><br>
 
-    </div>
+¡Thank you for your message!!!
 
+</div>
+    
     <div class="box">
 
         <h2>NOTICE</h2>
@@ -133,7 +134,19 @@
 
 </div>
 
-</div>
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+    e.preventDefault(); // evita recargar la página
+
+    document.getElementById("successMessage").classList.add("showMessage");
+
+    this.reset();
+
+});
+
+</script>
 
 </body>
 

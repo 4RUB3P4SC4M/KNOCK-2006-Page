@@ -307,3 +307,108 @@ td{
     color:#bbb;
 
 }
+
+.box{
+
+    overflow:hidden;
+
+}
+
+/* grid visual estilo 2000s (no moderno flex limpio) */
+.box img{
+
+    width:170px;
+
+    height:170px;
+
+    margin:6px;
+
+    border:3px solid #444;
+
+    background:#000;
+
+    object-fit:cover;
+
+    display:inline-block;
+
+    vertical-align:top;
+
+}
+
+/* efecto hover estilo web antigua */
+.box img:hover{
+
+    border-color:#ff4040;
+
+    cursor:pointer;
+
+}
+
+/* títulos de sección dentro de gallery */
+.box h3{
+
+    margin-top:0;
+
+    background:#111;
+
+    color:#ffcc00;
+
+    padding:6px;
+
+    border-left:5px solid #990000;
+
+    font-size:14px;
+
+}
+
+/* texto de instrucción */
+.box p{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-top:5px;
+
+}
+
+/* sensación “archivo de fotos” */
+.hero p{
+
+    font-style:italic;
+
+    color:#bbb;
+
+}
+
+.hiddenMessage{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border:2px solid #990000;
+
+    background:#111;
+
+    color:#fff;
+
+}
+
+.showMessage{
+
+    display:block;
+
+    animation:fadeIn 0.6s ease-in;
+
+}
+
+@keyframes fadeIn{
+
+    from { opacity:0; transform:scale(0.95); }
+
+    to { opacity:1; transform:scale(1); }
+
+}
